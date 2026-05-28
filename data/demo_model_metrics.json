@@ -1,0 +1,14 @@
+{
+  "model_name": "LightGBM",
+  "model_version": "heia-v1.2.0",
+  "trained_at": "2025-11-18T14:30:00Z",
+  "accuracy": 0.91,
+  "precision": 0.84,
+  "recall": 0.79,
+  "f1": 0.81,
+  "roc_auc": 0.93,
+  "training_samples": 18420,
+  "validation_samples": 4605,
+  "positive_class_rate": 0.22,
+  "notes": "Commercial activity classifier for Kazakhstan Mastercard portfolio"
+}

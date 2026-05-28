@@ -1,0 +1,4 @@
+risk_segment,number_of_cardholders,average_score,recommended_product,estimated_conversion_rate,estimated_opportunity_value
+High,52,0.78,SME Credit Line + Merchant Acquiring,0.34,186400000
+Medium,89,0.54,Working Capital Facility,0.21,124800000
+Low,59,0.31,Relationship Nurture Program,0.09,42600000
