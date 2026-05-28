@@ -15,16 +15,15 @@ from business_impact import calculate_business_impact
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
-app = FastAPI(
-    title="HEIA API",
-    description="Hidden Entrepreneur Intelligence Agent — Mastercard Kazakhstan demo",
-    version="1.0.0",
-)
+app = FastAPI()
+app.title = "HEIA API"
+app.description = "Hidden Entrepreneur Intelligence Agent — Mastercard Kazakhstan demo"
+app.version = "1.0.0"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
