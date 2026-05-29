@@ -54,7 +54,11 @@ DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 
 
 def load_backend_env() -> bool:
-    """Load backend/.env; non-empty values from file override empty/missing env vars."""
+    """Load backend/.env for keys not already set in the process environment.
+
+    Platform secrets (e.g. Render dashboard) take precedence over the file so a
+    stale committed or baked-in .env cannot override production credentials.
+    """
     env_path = BACKEND_DIR / ".env"
     if not env_path.is_file():
         return False
@@ -65,13 +69,31 @@ def load_backend_env() -> bool:
         key, _, value = line.partition("=")
         key = key.strip()
         value = value.strip().strip('"').strip("'")
-        if not key:
+        if not key or os.environ.get(key, "").strip():
             continue
-        if value:
-            os.environ[key] = value
-        elif not os.environ.get(key, "").strip():
-            os.environ[key] = value
+        os.environ[key] = value
     return True
+
+
+def _read_env_file_value(name: str) -> str:
+    env_path = BACKEND_DIR / ".env"
+    if not env_path.is_file():
+        return ""
+    prefix = f"{name}="
+    for raw_line in env_path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if line.startswith(prefix):
+            return line.partition("=")[2].strip().strip('"').strip("'")
+    return ""
+
+
+def _env_key_fingerprint(key: str) -> str | None:
+    key = key.strip()
+    if not key:
+        return None
+    if len(key) <= 8:
+        return f"{key[:2]}…{key[-2:]}"
+    return f"{key[:4]}…{key[-4:]}"
 
 
 def gemini_model_name() -> str:
@@ -658,12 +680,23 @@ def _call_gemini(system_context: str, user_message: str) -> tuple[str, str | Non
 @app.get("/api/agent/status")
 def agent_status() -> dict[str, Any]:
     key = gemini_api_key()
+    file_key = _read_env_file_value("GEMINI_API_KEY")
+    env_path = BACKEND_DIR / ".env"
+    if key and file_key and key == file_key:
+        key_source = "env_file"
+    elif key:
+        key_source = "environment"
+    else:
+        key_source = "none"
     return {
         "gemini_configured": bool(key),
         "model": gemini_model_name(),
         "context_ready": AGENT_CONTEXT_TEMPLATE is not None,
-        "env_file": str(BACKEND_DIR / ".env"),
-        "env_file_exists": (BACKEND_DIR / ".env").is_file(),
+        "env_file": str(env_path),
+        "env_file_exists": env_path.is_file(),
+        "gemini_key_fingerprint": _env_key_fingerprint(key),
+        "env_file_gemini_key_fingerprint": _env_key_fingerprint(file_key),
+        "gemini_key_source": key_source,
     }
 
 
