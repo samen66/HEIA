@@ -1,0 +1,17 @@
+{
+    "annualization_factor": 2,
+    "revenue_margin": 0.015,
+    "conversion_rates": {
+        "Top 1% highest priority": 0.12,
+        "Top 5% priority": 0.08,
+        "Top 10% review": 0.05,
+        "Standard monitoring": 0.01
+    },
+    "conversion_rate_pct": 10,
+    "conversion_rate_conservative": 5,
+    "conversion_rate_base": 10,
+    "conversion_rate_optimistic": 20,
+    "avg_annual_revenue_kzt": 50000,
+    "campaign_cost_kzt": 5000000,
+    "note": "These are prototype assumptions for business impact simulation."
+}

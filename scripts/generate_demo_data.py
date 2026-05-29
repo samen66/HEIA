@@ -1,4 +1,4 @@
-"""Generate HEIA demo data files. Run once: python scripts/generate_demo_data.py"""
+"""Generate HEIS demo data files. Run once: python scripts/generate_demo_data.py"""
 import json
 import random
 from datetime import datetime, timedelta

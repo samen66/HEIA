@@ -1,0 +1,6 @@
+{
+    "total_opportunity": "The system scores all consumer cards and prioritizes hidden SME-like customers for review.",
+    "why_high_priority": "High-priority cards usually show high online spending, recurring payments, focused MCC spending, or high spending intensity.",
+    "recommended_next_step": "Start with top 1% and top 5% candidates, review explanations, select recommended product, and save feedback after contact.",
+    "model_limitation": "The score is not proof of commercial activity. It is a prioritization signal for business review."
+}
