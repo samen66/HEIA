@@ -1,0 +1,5 @@
+opportunity_segment,number_of_cardholders,average_score,estimated_opportunity_value
+Standard monitoring,72000,0.45519009210937494,130153170.12
+Top 1% highest priority,800,0.9859146828125,50702657.56
+Top 10% review,4000,0.86312710453125,63314530.96
+Top 5% priority,3200,0.9329916261718749,99031864.29

@@ -1,0 +1,36 @@
+feature_name,importance_value,business_meaning
+recurring_amount_share,2.1565705377642113,"Regular platform, subscription, or vendor payments"
+tokenized_transaction_share,1.9181323674739879,Behavior feature used by the model
+night_amount_share,1.5280699349628841,Night-time spending share
+recurring_capable_amount_share,1.5278059142184741,Spending at merchants that support recurring payments
+median_transaction_amount_kzt,1.4928556833076667,Typical transaction size
+recurring_capable_merchant_share,1.4821556793187658,Behavior feature used by the model
+business_hours_transaction_share,1.4460777824843805,Activity during business hours
+recurring_transaction_share,1.4104477611940298,Behavior feature used by the model
+weekend_transaction_share,1.342015397249285,Weekend-oriented spending behavior
+pos_transaction_share,1.2132330489321026,Behavior feature used by the model
+online_transaction_share,1.2132330489321026,Behavior feature used by the model
+pos_amount_share,1.1743428540651581,Physical POS spending behavior
+online_amount_share,1.174342854065158,Digital or e-commerce-like spending behavior
+avg_transaction_amount_kzt,1.1545124702988125,Behavior feature used by the model
+amount_per_active_day_kzt,1.1432458786251773,Spending intensity per active day
+total_amount_kzt,1.0838118448735403,Behavior feature used by the model
+mcc_transaction_hhi,1.0718487832456318,Behavior feature used by the model
+top_mcc_transaction_share,1.0437218801923913,Behavior feature used by the model
+weekend_amount_share,1.021212960765184,Behavior feature used by the model
+unique_transaction_countries,1.0,Behavior feature used by the model
+unique_merchant_countries,1.0,Behavior feature used by the model
+night_transaction_share,0.9007902654530221,Behavior feature used by the model
+unique_merchants,0.875,Behavior feature used by the model
+max_transaction_amount_kzt,0.8534939940860978,Behavior feature used by the model
+unique_mcc,0.85,Behavior feature used by the model
+mcc_amount_hhi,0.7866321658066748,Concentration of spending across merchant categories
+tokenized_amount_share,0.7701351028795316,Digital wallet or tokenized payment behavior
+top_mcc_amount_share,0.5965327593728226,Focused spending in one merchant category
+min_transaction_amount_kzt,0.48884578079534435,Behavior feature used by the model
+monthly_amount_cv,0.2759506546444901,Behavior feature used by the model
+transactions_per_active_day,0.25963313874713756,Behavior feature used by the model
+business_hours_amount_share,0.2460493721329463,Behavior feature used by the model
+active_days,0.1111111111111111,Behavior feature used by the model
+total_transactions,0.013888888888888888,Behavior feature used by the model
+active_months,0.0,Behavior feature used by the model
